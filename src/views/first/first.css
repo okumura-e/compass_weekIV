@@ -1,26 +1,190 @@
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.options {
+    align-self: center;
+    display: flex;
+    gap: 18px;
+}
+
+button {
+    width: 142px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #3EB25E;
+    color: white;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+
+button:hover {
+    background-color: #FFFF7D;
+    transition: 0.3s;
+    color: #000;
+    cursor: pointer;
+}
+
+.typography {
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 20px;
+}
+
+h1 {
+    width: 411px;
+    height: 69px;
+    flex-shrink: 0;
+    font-size: 30px;
+    margin: auto;
+    margin-bottom: 22px;
+}
+
+p {
+    width: 333px;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    margin: auto;
+}
+
 @media (max-width: 480px) {
-
+    img {
+        margin: 51px 45px 27.88px 32px;
+        display: flex;
+        width: 84vw;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container{
+        align-items: center;
+    }
+    img {
+        margin: 51px auto 20px auto;
+        display: flex;
+        width: 60vw;
+    }
     
+    h1 {
+        height: 85px;
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
+    p {
+        font-size: 20px;
+        height: 140px;
+    }
+    button {
+        font-size: 17px;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15vh;
+    }
+    img {
+        display: flex;
+        width: 50vw;
+        flex-shrink: 0;
+        margin: auto 6vw auto 57.49px
+    }
+    .textAndButtons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        width: 370px;
+        height: 90px;
+        font-size: 33px;
+        margin: 0 auto 14px auto;
+    }
+    p {
+        width: 350px;
+        height: 180px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    button{
+        width: 168px;
+        height: 36px;
+        text-align: center;
+        font-size: 19px;
+    }
+    .typography {
+        padding-bottom: 65px;
+    }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    
-}
+@media (min-width: 1280px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15vh;
+    }
+    img {
+        display: flex;
+        margin: auto 78.99px auto 87.49px;
+        width: 552.513px;
+        height: 480.015px;
+        flex-shrink: 0;
+    }
+    .textAndButtons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        width: 460px;
+        height: 101px;
+        font-size: 39px;
+        font-weight: 700;
+        line-height: 46px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin: 0 auto 14px auto;
+    }
+    p {
+        width: 443px;
+        height: 200px;
+        flex-shrink: 0;
 
-@media (min-width: 1200px) and (max-width: 1919px) {
-    
-}
-
-@media (min-width: 1920px) {
-    
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    button{
+        width: 199px;
+        height: 36px;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 22px;
+    }
+    .typography {
+        padding-bottom: 65px;
+    }
 }
