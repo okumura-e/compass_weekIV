@@ -24,6 +24,7 @@ button:hover {
     background-color: #FFFF7D;
     transition: 0.3s;
     color: #000;
+    cursor: pointer;
 }
 
 .typography {
