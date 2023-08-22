@@ -1,0 +1,146 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 199px;
+    height: 36px;
+    border-radius: 35px;
+    background: #3EB25E;
+    color: white;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+
+button:hover {
+    background-color: #FFFF7D;
+    transition: 0.3s;
+    color: #000;
+}
+
+.typography {
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0cm;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 56.46%;
+        height: 86.67%;
+        top: 9vw;
+        left: 10vw;
+        position: relative;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 991px) {
+    img {
+        width: 50%;
+        height: 80%;
+        top: 5vw;
+        left: 16vw;
+        position: relative;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container{
+        flex-direction: row;
+        top: 6vw;
+        left: 16vw;
+        position: relative;
+        align-items: center;
+    }
+    img {
+        width: 34vw;
+        height: 87vh;
+    }
+    .typography {
+        font-weight: 700;
+        position: relative  ;
+        top: -6vw;
+    }
+    h1 {
+        font-size: 9vw;
+    }
+    p {
+        margin: 0 0 6vw 0;
+        font-size: 2.27vw;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+    .container{
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        top: 5vw;
+        left: 16vw;
+    }
+    img {
+        width: 34vw;
+        height: 87vh;
+    }
+    .typography {
+        top: -6vw;
+        margin-right: 4vw;
+    }
+    h1 {
+        font-size: 9vw;
+    }
+    p {
+        margin: 0 0 6vw 0;
+        font-size: 2.27vw;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container{
+        flex-direction: row;
+        top: 4vw;
+        right: 2vw;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+    img {
+        width: 30vw;
+        height: 80vh;
+    }
+    .typography {
+        position: relative  ;
+        top: -6vw;
+    }
+    h1 {
+        font-size: 6vw;
+    }
+    p {
+        margin: 0 0 4vw 0;
+        font-size: 2vw;
+    }
+    button {
+        width: 210px;
+        height: 45px;
+        font-size: 29px;
+    }
+}
