@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedValue == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
     });
 
-    const optionContainers = document.querySelectorAll('.gap');  // Seleciona todos os contêineres de opções
+    const optionContainers = document.querySelectorAll('.gap');
     let selectedBoxes
     optionContainers.forEach(container => {
-        const checkboxes = container.querySelectorAll('input[type="checkbox"]');  // Seleciona todos os checkboxes dentro do contêiner
+        const checkboxes = container.querySelectorAll('input[type="checkbox"]'); 
         
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('click', function () {
