@@ -93,8 +93,11 @@ select {
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: left;
 
+    appearance: none;
+    background: url('/public/icon/select_arrow.svg') 10px 50% no-repeat;
+    padding-left: 26px;
 }
 
 .dirButtons {
