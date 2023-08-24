@@ -14,28 +14,33 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedValue == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
     });
 
-    const radio = document.querySelectorAll('input[name="input_radio"]');
-    let selectedRadio
-    for (let index = 0; index < 9; index++) {
-        const element = radio[index];
+    const optionContainers = document.querySelectorAll('.gap');  // Seleciona todos os contêineres de opções
+    let selectedBoxes
+    optionContainers.forEach(container => {
+        const checkboxes = container.querySelectorAll('input[type="checkbox"]');  // Seleciona todos os checkboxes dentro do contêiner
         
-        element.addEventListener('change', function () {
-            selectedRadio = document.querySelector('input[name="input_radio"]:checked').value;
-        })
-    }
-    
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', function () {
+                selectedBoxes = Array.from(checkboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+                    
+                console.log(selectedBoxes);
+            });
+        });
+    });
+
     const submitButton = document.getElementById('submitButton')
     submitButton.addEventListener('click', function(event) {
         event.preventDefault()
-        if (selectedRadio === undefined)
+        if (selectedBoxes === undefined)
             alert("Selecione uma opção para continuar")
-    
+        
         else {
-            const form = { "statusAccount": selectedValue, "option": selectedRadio }
+            const first = JSON.parse(localStorage.getItem('form'))
+            const form = {...first, "investmentType": selectedValue, "options": selectedBoxes }
             localStorage.setItem("form", JSON.stringify(form));
-            window.location.href = "../third/index.html";
-        }
-        
-        
+            window.location.href = "../fourth/index.html";
+        }        
     });
 });
