@@ -9,6 +9,7 @@
 }
 
 .options {
+    justify-content: center;
     align-self: center;
     display: flex;
     gap: 18px;
