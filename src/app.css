@@ -8,12 +8,12 @@
 }
 
 button {
-    width: 199px;
-    height: 36px;
+    width: 100px;
+    height: 26px;
     border-radius: 35px;
     background: #3EB25E;
     color: white;
-    font-size: 22px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -36,112 +36,83 @@ button:hover {
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0cm;
+    font-size: 2rem;
+    margin: 25px auto;
 }
 
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    margin: 0px 0px 20px 0px;
 }
 
-@media (max-width: 480px) {
+img {
+    display: flex;
+    width: 58.41%;
+    margin: 56px 0px 0px 59px;
+    position: relative;
+}
+
+@media (min-width: 480px) and (max-width: 760px) {
     img {
-        width: 56.46%;
-        height: 86.67%;
-        top: 9vw;
-        left: 10vw;
-        position: relative;
+        height: 50.37vh;
+    }
+    h1 {
+        font-size: 3.312rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    button {
+        font-size: 1.38rem;
+        width: 199px;
+        height: 36px;
     }
 }
 
-@media (min-width: 481px) and (max-width: 991px) {
+@media (min-width: 761px) and (max-width: 1023px) {
     img {
-        width: 50%;
-        height: 80%;
-        top: 5vw;
-        left: 16vw;
-        position: relative;
+        height: 50.37vh;
+        margin: 56px auto 0px auto;
+        left: -40px;
+    }
+    h1 {
+        font-size: 3.312rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    button {
+        font-size: 1.38rem;
+        width: 199px;
+        height: 36px;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 1024px) {
     .container{
         flex-direction: row;
-        top: 6vw;
-        left: 16vw;
-        position: relative;
         align-items: center;
+        gap: 80px;
     }
     img {
-        width: 34vw;
-        height: 87vh;
+        width: 431px;
+        height: 60.04vh;
     }
     .typography {
         font-weight: 700;
-        position: relative  ;
-        top: -6vw;
+        margin: 0;
     }
     h1 {
-        font-size: 9vw;
+        font-size: 6.99rem;
+        margin: 0 0 44px 0;
     }
     p {
-        margin: 0 0 6vw 0;
-        font-size: 2.27vw;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1919px) {
-    .container{
-        position: relative;
-        flex-direction: row;
-        align-items: center;
-        top: 5vw;
-        left: 16vw;
-    }
-    img {
-        width: 34vw;
-        height: 87vh;
-    }
-    .typography {
-        top: -6vw;
-        margin-right: 4vw;
-    }
-    h1 {
-        font-size: 9vw;
-    }
-    p {
-        margin: 0 0 6vw 0;
-        font-size: 2.27vw;
-    }
-}
-
-@media (min-width: 1920px) {
-    .container{
-        flex-direction: row;
-        top: 4vw;
-        right: 2vw;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-    }
-    img {
-        width: 30vw;
-        height: 80vh;
-    }
-    .typography {
-        position: relative  ;
-        top: -6vw;
-    }
-    h1 {
-        font-size: 6vw;
-    }
-    p {
-        margin: 0 0 4vw 0;
-        font-size: 2vw;
+        font-size: 2.84vw;
+        margin: 0 0 66px 0;
     }
     button {
-        width: 210px;
-        height: 45px;
-        font-size: 29px;
+        font-size: 1.38rem;
+        width: 199px;
+        height: 36px;
     }
 }
