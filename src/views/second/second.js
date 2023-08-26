@@ -1,17 +1,35 @@
+function getForm() {
+    const firstForm = JSON.parse(localStorage.getItem('form'))
+    
+    if (firstForm){
+        selectedValue = firstForm.statusAccount;
+        selectedRadio = firstForm.option
+        document.getElementById('select').value = firstForm.statusAccount
+        changeSelect(firstForm.statusAccount)
+        document.getElementsByName('input_radio')[firstForm.option -1].checked = true;
+    }
+}
+
+function changeSelect(selectOption) {
+    document.querySelector('#optOne').classList.add('hidden')
+    document.querySelector('#optTwo').classList.add('hidden')
+    document.querySelector('#optThree').classList.add('hidden')
+
+    selectOption == 1 ? document.querySelector('#optOne').classList.remove('hidden') : 0
+    selectOption == 2 ? document.querySelector('#optTwo').classList.remove('hidden') : 0
+    selectOption == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
+}
+
+
+getForm()
+
 document.addEventListener('DOMContentLoaded', function () {
     const getSelect = document.getElementById('select');
     let selectedValue = 1;
 
     getSelect.addEventListener('change', function () {
         selectedValue = getSelect.value;
-        
-        document.querySelector('#optOne').classList.add('hidden')
-        document.querySelector('#optTwo').classList.add('hidden')
-        document.querySelector('#optThree').classList.add('hidden')
-
-        selectedValue == 1 ? document.querySelector('#optOne').classList.remove('hidden') : 0
-        selectedValue == 2 ? document.querySelector('#optTwo').classList.remove('hidden') : 0
-        selectedValue == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
+        changeSelect(selectedValue)
     });
 
     const radio = document.querySelectorAll('input[name="input_radio"]');
