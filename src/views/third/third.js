@@ -1,3 +1,34 @@
+function getForm() {
+    const secondForm = JSON.parse(localStorage.getItem('form'))
+    
+    if (secondForm.investmentType){
+        document.getElementById('select').value = secondForm.investmentType
+        changeSelect(parseInt(secondForm.investmentType))
+        selectedValue = secondForm.investmentType;
+
+        for (let index = 0; index < 9; index++) {
+            for (let indexForm = 0; indexForm < secondForm.options.length; indexForm++) {
+                if (document.getElementsByName('input_checkbox')[index].value == secondForm.options[indexForm]) {
+                    document.getElementsByName('input_checkbox')[index].checked = true
+                    break
+                }
+            }
+        }
+    }
+}
+
+function changeSelect(selectOption) {
+    document.querySelector('#optOne').classList.add('hidden')
+    document.querySelector('#optTwo').classList.add('hidden')
+    document.querySelector('#optThree').classList.add('hidden')
+    
+    selectOption == 1 ? document.querySelector('#optOne').classList.remove('hidden') : 0
+    selectOption == 2 ? document.querySelector('#optTwo').classList.remove('hidden') : 0
+    selectOption == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
+}
+
+getForm()
+
 document.addEventListener('DOMContentLoaded', function () {
     const getSelect = document.getElementById('select');
     let selectedValue = 1;
@@ -5,13 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     getSelect.addEventListener('change', function () {
         selectedValue = getSelect.value;
         
-        document.querySelector('#optOne').classList.add('hidden')
-        document.querySelector('#optTwo').classList.add('hidden')
-        document.querySelector('#optThree').classList.add('hidden')
-
-        selectedValue == 1 ? document.querySelector('#optOne').classList.remove('hidden') : 0
-        selectedValue == 2 ? document.querySelector('#optTwo').classList.remove('hidden') : 0
-        selectedValue == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
+        changeSelect(selectedValue)
     });
 
     const optionContainers = document.querySelectorAll('.gap');
@@ -24,8 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectedBoxes = Array.from(checkboxes)
                     .filter(checkbox => checkbox.checked)
                     .map(checkbox => checkbox.value);
-                    
-                console.log(selectedBoxes);
             });
         });
     });
@@ -33,8 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submitButton')
     submitButton.addEventListener('click', function(event) {
         event.preventDefault()
+        const checkForm = JSON.parse(localStorage.getItem('form'))
         if (selectedBoxes === undefined)
-            alert("Selecione uma opção para continuar")
+            checkForm.options ? selectedBoxes = checkForm.options : alert("Selecione uma opção para continuar")
         
         else {
             const first = JSON.parse(localStorage.getItem('form'))
