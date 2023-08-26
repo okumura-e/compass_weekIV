@@ -2,11 +2,11 @@ function getForm() {
     const firstForm = JSON.parse(localStorage.getItem('form'))
     
     if (firstForm){
-        selectedValue = firstForm.statusAccount;
-        selectedRadio = firstForm.option
         document.getElementById('select').value = firstForm.statusAccount
         changeSelect(firstForm.statusAccount)
         document.getElementsByName('input_radio')[firstForm.option -1].checked = true;
+        selectedValue = firstForm.statusAccount;
+        selectedRadio = parseInt(firstForm.option)
     }
 }
 
@@ -45,15 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submitButton')
     submitButton.addEventListener('click', function(event) {
         event.preventDefault()
-        if (selectedRadio === undefined)
-            alert("Selecione uma opção para continuar")
+        const checkForm = JSON.parse(localStorage.getItem('form'))
+        
+        if (selectedRadio === undefined) {
+            checkForm ? selectedRadio = checkForm.option : alert("Selecione uma opção para continuar")
+        }
     
         else {
             const form = { "statusAccount": selectedValue, "option": selectedRadio }
             localStorage.setItem("form", JSON.stringify(form));
             window.location.href = "../third/index.html";
         }
-        
-        
     });
 });
