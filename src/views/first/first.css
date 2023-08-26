@@ -46,7 +46,7 @@ button:hover {
 
 h1 {
     width: 411px;
-    height: 69px;
+    /* height: 69px; */
     flex-shrink: 0;
     font-size: 30px;
     margin: auto;
@@ -62,12 +62,10 @@ p {
     margin: auto;
 }
 
-@media (max-width: 480px) {
-    img {
-        margin: 51px 45px 27.88px 32px;
-        display: flex;
-        width: 84vw;
-    }
+img {
+    margin: 51px 45px 27.88px 32px;
+    display: flex;
+    width: 84vw;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -148,8 +146,8 @@ p {
     img {
         display: flex;
         margin: auto 78.99px auto 87.49px;
-        width: 552.513px;
-        height: 480.015px;
+        width: 552.51px;
+        height: 480.01px;
         flex-shrink: 0;
     }
     .textAndButtons{
