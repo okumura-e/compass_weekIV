@@ -20,7 +20,6 @@ function changeSelect(selectOption) {
     selectOption == 3 ? document.querySelector('#optThree').classList.remove('hidden') : 0
 }
 
-
 getForm()
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -52,9 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     
         else {
-            const form = { "statusAccount": selectedValue, "option": selectedRadio }
+            let form
+            if (checkForm) {
+                form = {...checkForm, "statusAccount": selectedValue, "option": selectedRadio }
+            }
+            else {
+                form = { "statusAccount": selectedValue, "option": selectedRadio }
+            }
             localStorage.setItem("form", JSON.stringify(form));
             window.location.href = "../third/index.html";
+            
         }
     });
 });
