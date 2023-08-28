@@ -45,27 +45,40 @@ button:hover {
 }
 
 h1 {
-    width: 411px;
-    /* height: 69px; */
     flex-shrink: 0;
-    font-size: 30px;
+    font-size: 20px;
     margin: auto;
     margin-bottom: 22px;
 }
 
 p {
-    width: 333px;
     flex-shrink: 0;
     font-size: 18px;
     font-weight: 400;
     line-height: 21.09px;
-    margin: auto;
+    margin: auto 15px;
 }
 
 img {
     margin: 51px 45px 27.88px 32px;
     display: flex;
     width: 84vw;
+}
+
+@media (min-width: 479px) and (max-width: 767px) {
+    h1 {
+        width: 411px;
+        font-size: 30px;
+    }
+
+    p {
+        width: 333px;
+        flex-shrink: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.09px;
+        margin: auto;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
